@@ -1,0 +1,16 @@
+pipeline {
+    agent 
+    // agent any
+     { label "linux-6.9"
+     }
+    
+    stages {
+        stage('hello world') {
+            steps {
+                sh 'echo vikram'
+            }
+        }
+    }
+} 
+     
+      

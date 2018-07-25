@@ -1,0 +1,26 @@
+pipeline {
+    agent none
+    stages {
+        stage('Run Tests') {
+                parallel {
+                    stage('Test On cent OS 6.9') {
+                        agent { label "linux-6.9" }
+                        steps {
+                        sh 'echo Testing on Cent os 6.9'
+                        }
+                        }
+                    stage('Test On Linux 7.0') {
+                        agent { label "master" }
+                        steps {
+                        sh 'echo testing on Cent os 7.0'
+                    }
+    
+                }
+    
+            }
+    
+        }
+    
+    }
+    
+}
